@@ -89,4 +89,4 @@ export const IndividualProject = ({project}) => {
           </span>
         </>
       );
-}
+};

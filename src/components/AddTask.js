@@ -23,12 +23,12 @@ export const AddTask = ({
   const { selectedProject } = useSelectedProjectValue();
 
   const addTask = () => {
-    const projectId = project || selectedProject;
+    const projectid = project || selectedProject;
     let collatedDate = '';
 
-    if (projectId === 'TODAY') {
+    if (projectid === 'TODAY') {
       collatedDate = moment().format('DD/MM/YYYY');
-    } else if (projectId === 'NEXT_7') {
+    } else if (projectid === 'NEXT_7') {
       collatedDate = moment()
         .add(7, 'days')
         .format('DD/MM/YYYY');
@@ -36,16 +36,16 @@ export const AddTask = ({
 
     return (
       task &&
-      projectId &&
+      projectid &&
       firebase
         .firestore()
         .collection('tasks')
         .add({
           archived: false,
-          projectId,
+          projectid,
           task,
           date: collatedDate || taskDate,
-          userId: 'jlIFXIwyAL3tzHMtzRbw',
+          userid: '68bd4b0f',
         })
         .then(() => {
           setTask('');
