@@ -8,7 +8,6 @@ export const Projects = ({ activeValue = null}) => {
     const { setSelectedProject } = useSelectedProjectValue();
     const {projects} = useProjectsValue();
 
-    // console.log(projects);
 
     return (
         projects && 
@@ -36,5 +35,5 @@ export const Projects = ({ activeValue = null}) => {
             </li>
 
         ))
-    )
-}
+    );
+};
