@@ -21,24 +21,22 @@ export const Projects = ({ activeValue = null}) => {
                 : 'sidebar__project'
             }
           >
-            <div
-              role="button"
-              data-testid="project-action"
-              tabIndex={0}
-              aria-label={`Select ${project.name} as the task project`}
-              onClick={() => {
-                setActive(project.projectid);
-                setSelectedProject(project.projectid);
-              }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={() => {
                   setActive(project.projectid);
                   setSelectedProject(project.projectid);
-                }
-              }}
-            >
-              <IndividualProject project={project} />
-            </div>
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    setActive(project.projectid);
+                    setSelectedProject(project.projectid);
+                  }
+                }}
+                >
+                <IndividualProject project={project} />
+              </div>
           </li>
         ))
       );
